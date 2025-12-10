@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:6.2
 
 import PackageDescription
 
@@ -19,7 +19,11 @@ let package = Package(
         ),
         .testTarget(
             name: "VectorMathTests",
-            dependencies: ["VectorMath"]
+            dependencies: ["VectorMath"],
+            exclude: [
+                "iOS-Info.plist",
+                "Mac-Info.plist"
+            ]
         ),
     ]
 )
